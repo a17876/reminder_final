@@ -2,8 +2,8 @@ const userModel = require("../models/userModel").userModel;
 
 const getUserByEmailIdAndPassword = (email, password) => {        
   let user = userModel.findOne(email);                            
-  if (user) {                                                     // database에 user가 있으면, 여기서 user
-    if (isUserValid(user, password)) {                            // db에서 user, browser에서 password
+  if (user) {                                                     
+    if (isUserValid(user, password)) {                            
       return user;
     }
   }
