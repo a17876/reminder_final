@@ -1,3 +1,4 @@
+const userModelFile = require("../models/userModel");
 const userModel = require("../models/userModel").userModel;
 
 const getUserByEmailIdAndPassword = (email, password) => {        
@@ -25,6 +26,7 @@ function isUserValid(user, password) {
 };
 
 const getUserByGitHubIdOrCreate = (profile) => {
+  console.log(`my profile id is = ${profile.id}`);
   let user = userModel.findById(profile.id);
   if (user) {
     return user;
@@ -36,9 +38,8 @@ const getUserByGitHubIdOrCreate = (profile) => {
     password: null,
     reminders: []
   };
-userModel.database.push(newUser);
-console.log(userModel.database);
-return newUser;
+userModelFile.database.push(newUser);
+getUserByGitHubIdOrCreate(profile);
 };
 
 module.exports = {

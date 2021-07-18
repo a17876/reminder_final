@@ -1,3 +1,5 @@
+// const userController = require("../controllers/userController");
+
 const database = [
   {
     id: 1,
@@ -19,14 +21,7 @@ const database = [
     email: "jonathan123@gmail.com",
     password: "jonathan123!",
     reminders: []
-  },
-  {
-    id: "71103101",
-    name: "Kaylyn",
-    email: null,
-    password: null,
-    reminders: []
-  },
+  }
 ];
 
 const userModel = {
@@ -37,12 +32,11 @@ const userModel = {
     }
     throw new Error(`Couldn't find user with email: ${email}`);
   },
-  findById: (id) => {
-    const user = database.find((user) => user.id === id);
+  findById: (profileId) => {
+    const user = database.find((user) => user.id === profileId);
     if (user) {
       return user;
-    }
-    throw new Error(`Couldn't find user with id: ${id}`);
+    } return false;
   },
 };
 
