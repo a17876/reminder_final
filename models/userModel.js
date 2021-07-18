@@ -33,7 +33,7 @@ const userModel = {
     throw new Error(`Couldn't find user with email: ${email}`);
   },
   findById: (profileId) => {
-    const user = database.find((user) => user.id === profileId);
+    const user = database.find((user) => user.id == profileId);
     if (user) {
       return user;
     } return false;
