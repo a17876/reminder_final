@@ -1,7 +1,9 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const userController = require("../controllers/userController");
-const GitHubStrategy = require('passport-github').Strategy;
+const GitHubStrategy = require("passport-github").Strategy;
+const FacebookStrategy = require("passport-facebook").Strategy;
+
 
 
 const localLogin = new LocalStrategy(            // 로컬 스트레터지 부분
@@ -22,18 +24,19 @@ const localLogin = new LocalStrategy(            // 로컬 스트레터지 부�
 );
 
 
-// passport.use(new GitHubStrategy(
-//   {
-//     clientID: GITHUB_CLIENT_ID,
-//     clientSecret: GITHUB_CLIENT_SECRET,
-//     callbackURL: "http://127.0.0.1:3000/auth/github/callback"
-//   },
-//   function (accessToken, refreshToken, profile, cb) {
-//     User.findOrCreate({ githubId: profile.id }, function (err, user) {
-//       return cb(err, user);
-//     });
-//   }
-// ));
+passport.use(new GitHubStrategy(
+  {
+    clientID: process.env.GITHUB_ID,
+    clientSecret: process.env.GITHUB_SECRET,
+    callbackURL: "http://localhost:8000/auth/github/callback",
+    scope: "user:email"
+  },
+  function (accessToken, refreshToken, profile, done) {
+    // console.log(profile);
+    let user = userController.getUserByGitHubIdOrCreate(profile);
+    return done(null, user);
+  }
+));
 
 
 

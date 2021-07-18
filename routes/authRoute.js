@@ -1,6 +1,7 @@
 const express = require("express");
 const passport = require("../middleware/passport");
 const { forwardAuthenticated } = require("../middleware/checkAuth");
+const userModel = require("../models/userModel").userModel;
 
 const router = express.Router();
 
@@ -17,11 +18,16 @@ router.post(
 );
 
 
-
 // localhost:8000/auth/login --> when the "Login with Github" button clicked
-// router.get("/github",  passport.authenticate("github"));
+router.get("/github",  passport.authenticate("github"));
 
-
+router.get('/github/callback', 
+  passport.authenticate('github', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/dashboard');
+  });
+ 
 
 
 // localhost:8000/auth/logout --> when the logout button clicked

@@ -20,6 +20,13 @@ const database = [
     password: "jonathan123!",
     reminders: []
   },
+  {
+    id: "71103101",
+    name: "Kaylyn",
+    email: null,
+    password: null,
+    reminders: []
+  },
 ];
 
 const userModel = {
