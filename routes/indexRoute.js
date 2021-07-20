@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { ensureAuthenticated, isAdmin } = require("../middleware/checkAuth");
+const reminderController = require("../controllers/reminder_controller");
 
 //----------------------- Welcome Route ----------------------------//
 // localhost: 8000
@@ -17,6 +18,9 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {       // user가 �
     user: req.user,                                            // req.user에 접근해서 current user를 받아 dashboard.ejs에 보내는 것임
   });                                                               // ensureAuthenticated: middleware
 });
+
+
+router.get("/weather", reminderController.getWeather);
 
 
 // billing page example

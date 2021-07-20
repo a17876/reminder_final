@@ -26,7 +26,7 @@ const localLogin = new LocalStrategy(            // 로컬 스트레터지 부�
 
 passport.use(new GitHubStrategy(
   {
-    clientID: process.env.GITHUB_ID,
+    clientID: process.env.GITHUB_ID, 
     clientSecret: process.env.GITHUB_SECRET,
     callbackURL: "http://localhost:8000/auth/github/callback",
     scope: "user:email"

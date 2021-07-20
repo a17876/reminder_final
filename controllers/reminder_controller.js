@@ -1,5 +1,6 @@
 const Database = require("../models/userModel").database;
 const userModel = require("../models/userModel").userModel;
+const fetch = require("node-fetch");
 
 let reminderController = {
     new: function (req, res) {
@@ -71,6 +72,12 @@ let reminderController = {
             }
         }
         res.redirect("/reminder");
+    },
+    getWeather: async function (req, res) {
+        const fetchResponse = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Vancouver");
+        const data = await fetchResponse.json();
+        // console.log(data);
+        res.render("reminder/weather", { data });
     }
 };
 

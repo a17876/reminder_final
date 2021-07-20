@@ -11,4 +11,5 @@ router.get("/:id", ensureAuthenticated, reminderController.listOne)
 router.get("/:id/edit", ensureAuthenticated, reminderController.edit)
 router.post("/:id/edit", ensureAuthenticated, reminderController.update)
 router.post("/delete/:id",ensureAuthenticated, reminderController.delete)
+router.get("/weather", reminderController.getWeather);
 module.exports = router;
