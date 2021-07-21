@@ -6,7 +6,7 @@ const reminderController = require("../controllers/reminder_controller");
 //----------------------- Welcome Route ----------------------------//
 // localhost: 8000
 router.get("/", (req, res) => {
-  res.send("welcome");
+  res.render("welcome");
 });
 
 
