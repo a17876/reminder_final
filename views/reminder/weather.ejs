@@ -1,12 +1,35 @@
 
 
 
+<div class="titleWeather">
+<h1> Current Weather of Main city in Canada </h1>
+</div>
 
-<h1><%= data.location.name %> Weather </h1>
-<p> <%= data.location.region %>, <%= data.location.country %></p>
+<h2> Select the province near you! </h2>
+<form action="weather" method="POST">
+    <select name = "city">
+        <option value="Edmonton">Alberta - Edmonton </option>
+        <option value="Vancouver">British Columbia - Vancouver</option>
+        <option value="Winnipeg">Manitoba - Winnipeg </option>
+        <option value="Fredericton">New Brunswick - Fredericton </option>
+        <option value="St.John's">Newfoundland and Labrador - St.John's</option>
+        <option value="Toronto">Ontario - Toronto </option>
+        <option value="Regina">Saskatchewan - Regina </option>
+        <option value="Charlottetown">Prince Edward Island - Charlottetown </option>
+        <option value="Quebec City">Quebec - Quebec City</option>
+    </select>
 
+<p><%= data.location.name %>, <%= data.location.region %>, <%= data.location.country %></p>
 
+ 
 <p>The current temperature is: <%= data.current.temp_c %></p>
-<p>Last update: <%= data.current.last_updated %></p>
+<p >Last update: <%= data.current.last_updated %></p>
 <p><%= data.current.condition.text %> </p>
+
+
+
+
+
+
+
 
