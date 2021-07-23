@@ -1,5 +1,3 @@
-// const userController = require("../controllers/userController");
-
 const database = [
   {
     id: 1,

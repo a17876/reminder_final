@@ -26,10 +26,13 @@ function isUserValid(user, password) {
 };
 
 const getUserByGitHubIdOrCreate = (profile) => {
-  console.log(`my profile id is = ${profile.id}`);
+  // console.log(`my profile id is = ${profile.id}`);
   let user = userModel.findById(profile.id);
+  console.log(user);
+
   if (user) {
     return user;
+    
   }
   let newUser = {
     id: profile.id,

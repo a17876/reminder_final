@@ -1,36 +1,64 @@
+<h1 class="weatherHeader">Current WEATHER in Canada</h1>
 
+<div class="cities">
+    <div class="al">
+        <h3>Alberta</h3>
+    </div>
+    <div class="alWeather">
+        <p>Temperature: <%= al.current.temp_c %>℃</p>
+        <p><%= al.current.condition.text %></p>
+        <img src="<%= al.current.condition.icon %>"">
+        <p class="last">Last update: <%= al.current.last_updated %></p>
+    </div>
 
+    <div class="win">
+        <h3>Winnipeg</h3>
+    </div>
+    <div class="winWeather">
+        <p>Temperature: <%= win.current.temp_c %>℃</p>
+        <p><%= win.current.condition.text %></p>
+        <img src="<%= win.current.condition.icon %>"">
+        <p class="last">Last update: <%= win.current.last_updated %></p>
+    </div>
 
-<div class="titleWeather">
-<h1> Current Weather of Main city in Canada </h1>
+    <div class="hal">
+        <h3>Halifax</h3>
+    </div>
+    <div class="halWeather">
+        <p>Temperature: <%= hal.current.temp_c %>℃</p>
+        <p><%= hal.current.condition.text %></p>
+        <img src="<%= hal.current.condition.icon %>"">
+        <p class="last">Last update: <%= hal.current.last_updated %></p>
+    </div>
+
+    <div class="mon">
+        <h3>Montreal</h3>
+    </div>
+    <div class="monWeather">
+        <p>Temperature: <%= mon.current.temp_c %>℃</p>
+        <p><%= mon.current.condition.text %></p>
+        <img src="<%= mon.current.condition.icon %>"">
+        <p class="last">Last update: <%= mon.current.last_updated %></p>
+    </div>
+
+    <div class="tor">
+        <h3>Toronto</h3>
+    </div>
+    <div class="torWeather">
+        <p>Temperature: <%= tor.current.temp_c %>℃</p>
+        <p><%= tor.current.condition.text %></p>
+        <img src="<%= tor.current.condition.icon %>"">
+        <p class="last">Last update: <%= tor.current.last_updated %></p>
+    </div>
+
+    <div class="van">
+        <h3>Vancouver</h3>
+    </div>
+    <div class="vanWeather">
+        <p>Temperature: <%= van.current.temp_c %>℃</p>
+        <p><%= van.current.condition.text %></p>
+        <img src="<%= van.current.condition.icon %>"">
+        <p class="last">Last update: <%= van.current.last_updated %></p>
+    </div>
+
 </div>
-
-<h2> Select the province near you! </h2>
-<form action="weather" method="POST">
-    <select name = "city">
-        <option value="Edmonton">Alberta - Edmonton </option>
-        <option value="Vancouver">British Columbia - Vancouver</option>
-        <option value="Winnipeg">Manitoba - Winnipeg </option>
-        <option value="Fredericton">New Brunswick - Fredericton </option>
-        <option value="St.John's">Newfoundland and Labrador - St.John's</option>
-        <option value="Toronto">Ontario - Toronto </option>
-        <option value="Regina">Saskatchewan - Regina </option>
-        <option value="Charlottetown">Prince Edward Island - Charlottetown </option>
-        <option value="Quebec City">Quebec - Quebec City</option>
-    </select>
-    <button type="submit" id="submitWeather">Show the weather</button>
-</form>
-<p><%= data.location.name %>, <%= data.location.region %>, <%= data.location.country %></p>
-
- 
-<p>The current temperature is: <%= data.current.temp_c %></p>
-<p >Last update: <%= data.current.last_updated %></p>
-<p><%= data.current.condition.text %> </p>
-
-
-
-
-
-
-
-

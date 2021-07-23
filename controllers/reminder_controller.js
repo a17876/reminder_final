@@ -52,8 +52,8 @@ let reminderController = {
             description: req.body.description,
             completed: req.body.completed
         };
-        console.log(reminder2);
-        console.log(req.user.reminders);
+        // console.log(reminder2);
+        // console.log(req.user.reminders);
         for (item of req.user.reminders) {
             if (item.id == reminder2.id) {
                 item.title = reminder2.title;
@@ -74,10 +74,21 @@ let reminderController = {
         res.redirect("/reminder");
     },
     getWeather: async function (req, res) {
-        const fetchResponse = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Vancouver");
-        const data = await fetchResponse.json();
-        // console.log(data);
-        res.render("reminder/weather", { data });
+        const alberta = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Alberta");
+        const winnipeg = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Winnipeg");
+        const halifax = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Halifax");
+        const montreal = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Montreal");
+        const toronto = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Toronto");
+        const vancouver = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Vancouver");
+        const al = await alberta.json();
+        console.log(al);
+        const win = await winnipeg.json();
+        const hal = await halifax.json();
+        const mon = await montreal.json();
+        const tor = await toronto.json();
+        const van = await vancouver.json();
+    
+        res.render("reminder/weather", { al, win, hal, mon, tor, van });
     }
 };
 

@@ -2,29 +2,18 @@
     background-color: navy;
 };
 
-.titleWeather{
-    color: teal
-};
-#submitWeather{
-    background-color: yellow;
-}
-
 .welcomeImage{
-    width:70%;
     text-align: center;
 }
-.welcomePage{
-    display:grid;
-    grid-auto-rows: repeat(2, 1fr);
-}
+
 .grid-first{
-    grid-row:1/2;
+    /* grid-row:1/2; */
     text-align: center;
     padding-top: 2em;
     padding-bottom: 2em;
 }
 .grid-second{
-    grid-row:2/3;
+    /* grid-row:2/3; */
     color: #6b3e2e;
     text-align: center;
     padding-top: 2em;
@@ -34,11 +23,110 @@
 }
 
 .click-btn{
-    background-color: #6b3e2e;
-    color: yellow;
+    color: rgb(99, 13, 238);
+    /* background-color: thistle; */
     text-align: center;
-    /* margin: auto; */
     font-weight: bold;
-    font-size: 3em;
-    /* display: inline; */
+    font-size: 2em;
+    text-decoration: underline;
+    margin:auto;
+    display: block;
+}
+.register{
+    margin:3em;
+}
+
+.weatherHeader{
+    color:rgb(34, 33, 33);
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+.cities{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.7fr 2fr 0.7fr 2fr;
+    text-align: center;   
+}
+.al{
+    grid-column:1/2;
+    grid-row: 1/2;
+    background-color:lightcyan ;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.alWeather{
+    grid-column:1/2;
+    grid-row: 2/3;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.win{
+    grid-column:2/3;
+    grid-row: 1/2;
+    background-color: lightcyan;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.winWeather{
+    grid-column:2/3;
+    grid-row: 2/3;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.hal{
+    grid-column:3/4;
+    grid-row: 1/2;
+    background-color: lightcyan;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.halWeather{
+    grid-column:3/4;
+    grid-row: 2/3;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.mon{
+    grid-column:1/2;
+    grid-row: 3/4;
+    background-color:lightgoldenrodyellow ;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.monWeather{
+    grid-column:1/2;
+    grid-row: 4/5;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.tor{
+    grid-column:2/3;
+    grid-row: 3/4;
+    background-color:lightgoldenrodyellow ;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.torWeather{
+    grid-column:2/3;
+    grid-row: 4/5;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.van{
+    grid-column:3/4;
+    grid-row: 3/4;
+    background-color:lightgoldenrodyellow ;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+.vanWeather{
+    grid-column:3/4;
+    grid-row: 4/5;
+    border-style:groove;
+    border-radius: 0.2em;
+}
+
+.last{
+    font-size: 0.7em;
 }
