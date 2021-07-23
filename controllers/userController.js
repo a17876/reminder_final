@@ -20,7 +20,6 @@ const getUserById = (id) => {
   return null;
 };
 
-
 function isUserValid(user, password) {
   return user.password === password;
 };
@@ -29,10 +28,8 @@ const getUserByGitHubIdOrCreate = (profile) => {
   // console.log(`my profile id is = ${profile.id}`);
   let user = userModel.findById(profile.id);
   console.log(user);
-
   if (user) {
     return user;
-    
   }
   let newUser = {
     id: profile.id,
@@ -45,8 +42,25 @@ userModelFile.database.push(newUser);
 getUserByGitHubIdOrCreate(profile);
 };
 
+const userRegister = (req, res) => {
+  let user = userModel.findOne(req.body.email);
+  if (user){
+    return user;
+  }
+  let newUser = {
+    id: userModelFile.database.length + 1,
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    reminders: []
+  };
+  userModelFile.database.push(newUser);
+  res.redirect("/auth/login");
+  };
+
 module.exports = {
   getUserByEmailIdAndPassword,
   getUserById,
-  getUserByGitHubIdOrCreate
+  getUserByGitHubIdOrCreate,
+  userRegister 
 };

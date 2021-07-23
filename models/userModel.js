@@ -28,13 +28,14 @@ const userModel = {
     if (user) {
       return user;
     }
-    throw new Error(`Couldn't find user with email: ${email}`);
+    return false;
   },
   findById: (profileId) => {
     const user = database.find((user) => user.id == profileId);
     if (user) {
       return user;
-    } return false;
+    } 
+    return false;
   },
 };
 

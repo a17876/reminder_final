@@ -3,6 +3,7 @@ const passport = require("../middleware/passport");
 const { forwardAuthenticated } = require("../middleware/checkAuth");
 const userModel = require("../models/userModel").userModel;
 const router = express.Router();
+const userController = require("../controllers/userController");
 
 
 // localhost:8000/auth/login --> shows the login page
@@ -28,9 +29,9 @@ router.get('/github/callback',
   });
 
 
-router.get("/register", forwardAuthenticated, (req, res) => res.render("register"));
+router.get("/register", (req, res) => res.render("register"));
 
-
+router.post("/register", userController.userRegister);
 
 router.get("/forgot", (req, res) => res.send("Sorry. You cannot reset your account. We will improve our service as soon as possible."));
 

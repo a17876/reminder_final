@@ -81,7 +81,6 @@ let reminderController = {
         const toronto = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Toronto");
         const vancouver = await fetch("http://api.weatherapi.com/v1/current.json?key=84efde3d56bb4109b3b195048212007&q=Vancouver");
         const al = await alberta.json();
-        console.log(al);
         const win = await winnipeg.json();
         const hal = await halifax.json();
         const mon = await montreal.json();
