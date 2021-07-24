@@ -33,6 +33,8 @@ router.get("/register", (req, res) => res.render("register"));
 
 router.post("/register", userController.userRegister);
 
+router.get("/registerSuccess", (req, res) => res.render("registerSuccess"));
+
 router.get("/forgot", (req, res) => res.send("Sorry. You cannot reset your account. We will improve our service as soon as possible."));
 
 

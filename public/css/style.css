@@ -130,3 +130,16 @@
 .last{
     font-size: 0.7em;
 }
+.success{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 2em;
+    color: darkmagenta;
+}
+.backToLogin{
+    text-align: center;
+    text-decoration: underline;
+    display: block;
+    font-size: 1.5em;
+}

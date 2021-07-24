@@ -1,6 +1,7 @@
 const userModelFile = require("../models/userModel");
 const userModel = require("../models/userModel").userModel;
 
+
 const getUserByEmailIdAndPassword = (email, password) => {        
   let user = userModel.findOne(email);                            
   if (user) {                                                     
@@ -55,7 +56,7 @@ const userRegister = (req, res) => {
     reminders: []
   };
   userModelFile.database.push(newUser);
-  res.redirect("/auth/login");
+  res.redirect("/auth/registerSuccess");
   };
 
 module.exports = {
