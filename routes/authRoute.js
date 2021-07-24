@@ -5,6 +5,29 @@ const userModel = require("../models/userModel").userModel;
 const router = express.Router();
 const userController = require("../controllers/userController");
 
+// const prisma = new PrismaClient();
+// import { PrismaClient } from "@prisma/client";
+// require("dotenv").config();
+
+// router.post("/register", async (req, res) => {
+//   const name = req.body.name; 
+//   const email = req.body.email;
+//   try {
+//       const existingUser = await prisma.user.findUnique({ where: { email } }); 
+//       if (existingUser) {
+//           return res.send("The user already exists!");
+//       } else {
+//           const userFromDatabase = await prisma.user.create({
+//               data: { name, email }
+//           });
+//           return userFromDatabase;
+//       }
+//   } catch (err) {
+//       return res.send("Something happend");
+//   }
+// });
+
+
 
 // localhost:8000/auth/login --> shows the login page
 router.get("/login", forwardAuthenticated, (req, res) => res.render("login"));
